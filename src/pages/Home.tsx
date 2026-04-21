@@ -633,16 +633,16 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="w-full lg:w-7/12 flex flex-col order-2"
           >
-            <h3 className="text-3xl md:text-5xl font-serif font-bold leading-[1.4] mb-8 break-keep">
+            <h3 className="text-3xl md:text-5xl font-serif font-bold leading-[1.4] mb-8 break-keep text-center lg:text-left">
               "공중파 방송이 증명한 베테랑,<br className="hidden md:block" />
               <span className="text-gold">결과로 말하는 엠디탐정</span>"
             </h3>
             
-            <p className="text-base md:text-xl font-light text-white/80 leading-[1.8] mb-6 break-keep">
+            <p className="text-base md:text-xl font-light text-white/80 leading-[1.8] mb-6 break-keep text-center lg:text-left">
               <strong className="text-white font-medium">엠디탐정은 끝까지 책임집니다.</strong> 밑바닥부터 현장을 누비며 쌓아온 경험, 엠디탐정은 시작부터 다릅니다.
             </p>
             
-            <p className="text-base md:text-xl font-light text-white/80 leading-[1.8] mb-8 break-keep">
+            <p className="text-base md:text-xl font-light text-white/80 leading-[1.8] mb-8 break-keep text-center lg:text-left">
               저 엠디탐정 대표는 유명 유튜브 채널과 지상파 방송에 출연하며 실력을 검증받은 탐정회사에서 모든 사건을 직접 도맡아 해결해 왔습니다. 풍부한 경험은 곧 압도적인 결과의 차이를 만듭니다. 현장에서 다져진 노하우로 당신이 바라는 최선의 결과를 도출해 내겠습니다. 저희가 해결하지 못하는 사건이라면, 그 누구도 해결할 수 없습니다.
             </p>
 
@@ -663,7 +663,7 @@ export default function Home() {
               ))}
             </div>
             
-            <div className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl relative overflow-hidden backdrop-blur-sm">
+            <div className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl relative overflow-hidden backdrop-blur-sm text-center lg:text-left">
               <div className="absolute top-0 left-0 w-1 h-full bg-gold"></div>
               <p className="text-lg md:text-2xl font-medium leading-[1.6] break-keep">
                 MD는 고객의 입장에서 사건을 생각합니다.<br className="hidden md:block" />
