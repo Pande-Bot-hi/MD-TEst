@@ -56,7 +56,6 @@ const EXTRA_CERTS = [
   '/ㅇㅇ/개개비/2.jpg',
   '/ㅇㅇ/개개비/3.jpg',
   '/ㅇㅇ/개개비/4.png',
-  '/ㅇㅇ/개개비/KakaoTalk_20260420_230722745_03.jpg',
   '/ㅇㅇ/개개비/KakaoTalk_20260420_230722745_04.jpg',
   '/ㅇㅇ/개개비/KakaoTalk_20260420_230722745_06.jpg',
   '/ㅇㅇ/개개비/KakaoTalk_20260420_230722745_07.jpg',
@@ -110,7 +109,7 @@ const ReviewCard = ({ review, onClick }: { review: any, onClick?: () => void }) 
 );
 
 const OfficeGallery = () => {
-  const images = ['/ㅇㅇ/1.jpg', '/ㅇㅇ/2.jpg', '/ㅇㅇ/3.jpg', '/ㅇㅇ/4.jpg'];
+  const images = ['/ㅇㅇ/1.jpg', '/ㅇㅇ/2.jpg', '/ㅇㅇ/3.jpg', '/ㅇㅇ/4.jpg', '/ㅇㅇ/5.jpg', '/ㅇㅇ/6.jpg'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -391,7 +390,7 @@ export default function Home() {
       <div className={`fixed right-4 md:right-8 z-[90] flex flex-col gap-4 transform transition-all duration-500 ${isScrolledForBanner ? 'bottom-[110px] md:bottom-8' : 'bottom-8'}`}>
         <a
           href="tel:010-3985-8279"
-          className="hidden md:flex w-14 h-14 bg-black text-white border border-white/20 rounded-full items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 relative group"
+          className="hidden md:flex w-14 h-14 bg-green-600 text-white border border-white/20 rounded-full items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 relative group"
         >
           <Phone size={24} fill="currentColor" />
           <span className="absolute right-full mr-4 bg-black/90 backdrop-blur-sm text-white text-xs py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-white/10 pointer-events-none">
@@ -533,35 +532,27 @@ export default function Home() {
 
         <div className="relative z-10 text-center px-4 max-w-5xl mt-16 md:mt-0 flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.2 }}
-            className="flex flex-col items-center mb-8 md:mb-12"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+            className="flex flex-col items-center mt-4 md:mt-8"
           >
             <img
               src="/logo.png"
               alt="MD Logo"
-              className="w-48 md:w-96 mb-8 select-none"
+              className="w-56 md:w-[28rem] mb-8 select-none"
               style={{ filter: "invert(1) brightness(1.5)" }}
             />
-            <h2 className="text-xl md:text-3xl font-serif tracking-[0.5em] md:tracking-[1em] font-light opacity-80 pl-[0.5em] md:pl-[1em]">
+            <h2 className="text-2xl md:text-4xl font-serif tracking-[0.5em] md:tracking-[1em] font-light opacity-80 pl-[0.5em] md:pl-[1em]">
               탐정사무소
             </h2>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.8 }}
-            className="text-lg md:text-2xl font-medium max-w-2xl mx-auto leading-relaxed tracking-tight text-white/95 drop-shadow-lg break-keep"
-            dangerouslySetInnerHTML={{ __html: t('hero.desc') }}
-          />
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="mt-16 flex flex-col md:flex-row gap-6 justify-center items-center"
+            transition={{ duration: 1, delay: 0.8 }}
+            className="mt-16 md:mt-20 flex flex-col md:flex-row gap-6 justify-center items-center"
           >
             <a
               href="#contact"
