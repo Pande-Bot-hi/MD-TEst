@@ -643,7 +643,7 @@ export default function Home() {
             className="w-full lg:w-7/12 flex flex-col order-2"
           >
             <h3 className="text-3xl md:text-5xl font-serif font-bold leading-[1.4] mb-8 break-keep">
-              "지상파 방송이 증명한 베테랑,<br className="hidden md:block" />
+              "공중파 방송이 증명한 베테랑,<br className="hidden md:block" />
               <span className="text-gold">결과로 말하는 엠디탐정</span>"
             </h3>
             
@@ -960,8 +960,8 @@ ${certKeyframesCss}
       </section>
 
       {/* Clobet On-Site Dominance Section */}
-      <section className="relative py-24 md:py-32 px-4 md:px-8 bg-black text-white overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 z-0">
+      <section className="relative py-24 md:py-32 px-4 md:px-8 bg-transparent text-white overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 z-0 pointer-events-none mix-blend-lighten">
           {/* Background Layer 1: Center-aligned main image */}
           <div className="absolute inset-0 w-full h-full">
             <img
@@ -969,9 +969,9 @@ ${certKeyframesCss}
               alt="MD Tactical Experience 1"
               className="w-full h-full object-cover opacity-40 grayscale"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-l from-black via-transparent to-black/30" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A1128] via-[#0A1128]/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-l from-[#0A1128] via-transparent to-[#0A1128]/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-transparent to-[#0A1128]/80" />
           </div>
 
           {/* Background Layer 2: Left-aligned overlay image */}
@@ -981,7 +981,7 @@ ${certKeyframesCss}
               alt="MD Tactical Experience 2"
               className="w-full h-full object-cover opacity-30 grayscale"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-transparent to-black" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A1128]/90 via-transparent to-[#0A1128]" />
           </div>
 
           {/* Background Layer 3: Overlay accent */}
@@ -991,7 +991,7 @@ ${certKeyframesCss}
               alt="MD Tactical Experience 3"
               className="w-full h-full object-cover opacity-20 grayscale"
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-black via-transparent to-black" />
+            <div className="absolute inset-0 bg-gradient-to-l from-[#0A1128] via-transparent to-[#0A1128]" />
           </div>
         </div>
 
