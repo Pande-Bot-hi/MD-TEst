@@ -58,12 +58,12 @@ export default function BranchInfo() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="w-full relative flex justify-center items-center p-8 bg-white rounded-[2.5rem] border border-black/5 shadow-[0_20px_40px_rgb(0,0,0,0.04)] group"
+            className="w-full relative flex justify-center items-center p-6 md:p-8 bg-white rounded-[2.5rem] border border-black/5 shadow-[0_20px_40px_rgb(0,0,0,0.04)] group"
           >
             {/* Outline Glow Effect */}
             <div className="absolute inset-0 rounded-[2.5rem] border border-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
             
-            <div className="w-full max-w-[360px] md:max-w-[420px] pb-6 aspect-[4/5] object-contain flex items-center justify-center">
+            <div className="w-full max-w-[280px] md:max-w-[420px] pb-4 md:pb-6 aspect-[4/5] object-contain flex items-center justify-center">
               <svg 
                 viewBox={SouthKorea.viewBox} 
                 className="w-full h-full"
@@ -153,7 +153,7 @@ export default function BranchInfo() {
               <div className="flex items-start gap-4">
                 <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></div>
                 <p className="text-base md:text-lg font-medium text-black/80 leading-relaxed break-keep">
-                  원하시는 지사를 선택해 주시면 담당자 직통 상담으로 이어집니다. 철저한 비밀 보장을 약속드립니다.
+                  전국 거점 지사 운영으로 대한민국 전 지역 어디든 즉시 출동합니다. 촘촘한 광역 네트워크를 통해 지역적 한계 없는 신속하고 정확한 조사를 약속드립니다.
                 </p>
               </div>
             </div>

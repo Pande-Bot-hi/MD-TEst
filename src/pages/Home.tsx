@@ -53,7 +53,6 @@ const staggerContainer = {
 
 const EXTRA_CERTS = [
   '/ㅇㅇ/개개비/1.jpg',
-  '/ㅇㅇ/개개비/2.jpg',
   '/ㅇㅇ/개개비/3.jpg',
   '/ㅇㅇ/개개비/4.png',
   '/ㅇㅇ/개개비/KakaoTalk_20260420_230722745_04.jpg',
@@ -109,7 +108,7 @@ const ReviewCard = ({ review, onClick }: { review: any, onClick?: () => void }) 
 );
 
 const OfficeGallery = () => {
-  const images = ['/ㅇㅇ/1.jpg', '/ㅇㅇ/2.jpg', '/ㅇㅇ/3.jpg', '/ㅇㅇ/4.jpg', '/ㅇㅇ/5.jpg', '/ㅇㅇ/6.jpg'];
+  const images = ['/ㅇㅇ/1.jpg', '/ㅇㅇ/2.jpg', '/ㅇㅇ/3.jpg', '/ㅇㅇ/4.jpg', '/ㅇㅇ/5.jpg'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -129,7 +128,7 @@ const OfficeGallery = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute inset-0 w-full h-full object-contain md:object-cover"
+          className={`absolute inset-0 w-full h-full ${currentIndex === 4 ? 'object-contain' : 'object-contain md:object-cover'}`}
           alt={`Office Snapshot ${currentIndex + 1}`}
         />
       </AnimatePresence>
@@ -505,7 +504,7 @@ export default function Home() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+      <section className="relative h-[80vh] min-h-[500px] md:min-h-0 md:h-screen flex items-center justify-center overflow-hidden bg-black">
         {/* Video Background */}
         <video
           ref={(el) => {
@@ -540,7 +539,7 @@ export default function Home() {
             <img
               src="/logo.png"
               alt="MD Logo"
-              className="w-56 md:w-[28rem] mb-8 select-none"
+              className="w-52 md:w-[26rem] mb-6 md:mb-8 select-none"
               style={{ filter: "invert(1) brightness(1.5)" }}
             />
             <h2 className="text-2xl md:text-4xl font-serif tracking-[0.5em] md:tracking-[1em] font-light opacity-80 pl-[0.5em] md:pl-[1em]">
@@ -552,14 +551,8 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="mt-16 md:mt-20 flex flex-col md:flex-row gap-6 justify-center items-center"
+            className="mt-12 md:mt-20 flex justify-center items-center"
           >
-            <a
-              href="#contact"
-              className="px-12 py-5 bg-white text-black rounded-full font-medium tracking-tight hover:scale-105 transition-transform duration-500 flex items-center gap-3"
-            >
-              {t('hero.btn_start')} <ArrowRight size={16} />
-            </a>
             <a
               href="#services"
               className="px-12 py-5 border border-white/20 rounded-full font-medium tracking-tight hover:bg-white/5 transition-colors duration-500"
@@ -574,7 +567,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.3 }}
           transition={{ delay: 2 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-4 hidden md:flex"
         >
           <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
           <span className="text-[10px] uppercase tracking-widest">{t('hero.scroll')}</span>
@@ -582,7 +575,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-10 md:py-14 bg-black text-white relative z-20 border-t border-white/10">
+      <section className="py-8 md:py-14 bg-black text-white relative z-20 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-3 gap-2 md:gap-8 divide-x divide-white/10">
             <div className="flex flex-col items-center justify-center text-center px-2 md:px-0">
@@ -729,7 +722,7 @@ export default function Home() {
                 {
                   type: t('media.blog'),
                   title: t('media.items.blog1'),
-                  url: 'https://m.blog.naver.com/mdetection/224213275756',
+                  url: 'https://m.blog.naver.com/mdetection/224259365829?referrerCode=1',
                   image: '/뉴스/블로그1.JPG',
                   color: 'bg-blue-600',
                   textHighlight: 'text-blue-600'
@@ -737,7 +730,7 @@ export default function Home() {
                 {
                   type: t('media.blog'),
                   title: t('media.items.blog2'),
-                  url: 'https://m.blog.naver.com/mdetection/224227005611',
+                  url: 'https://m.blog.naver.com/mdetection/224252668099?referrerCode=1',
                   image: '/뉴스/블로그2.JPG',
                   color: 'bg-blue-600',
                   textHighlight: 'text-blue-600'
@@ -951,7 +944,7 @@ ${certKeyframesCss}
       </section>
 
       {/* Clobet On-Site Dominance Section */}
-      <section className="relative py-24 md:py-32 px-4 md:px-8 bg-transparent text-white overflow-hidden border-t border-white/5">
+      <section className="hidden md:block relative py-24 md:py-32 px-4 md:px-8 bg-transparent text-white overflow-hidden border-t border-white/5">
         <div className="absolute inset-0 z-0 pointer-events-none mix-blend-lighten">
           {/* Background Layer 1: Center-aligned main image */}
           <div className="absolute inset-0 w-full h-full">
@@ -1217,130 +1210,128 @@ ${reviewKeyframesCss}
 
 
       {/* Inquiry Form Section */}
-      <section id="contact" className="py-20 md:py-32 px-4 md:px-8 bg-white text-black relative overflow-hidden">
+      <section id="contact" className="py-20 md:py-32 px-4 md:px-8 bg-[#f4f6fa] text-black relative overflow-hidden">
         {/* Subtle Building Blend Decoration */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.04]">
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.02]">
           <img src="/dark_navy_building_bg.png" alt="background" className="w-full h-full object-cover mix-blend-multiply grayscale" />
         </div>
-        <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div
-            {...fadeInUp}
-            className="text-center mb-16 md:mb-24"
-          >
-            <h2 className="text-5xl md:text-8xl font-serif italic mb-6 md:mb-8">{t('inquiry.title1')} <br />{t('inquiry.title2')}</h2>
-            <p className="text-lg md:text-xl font-light opacity-60 px-4 md:px-0">
-              {t('inquiry.desc')}
-            </p>
-          </motion.div>
-
-          <motion.form
-            action="https://formspree.io/f/xnjgdyew"
-            method="POST"
-            onSubmit={handleFormSubmit}
-            {...fadeInUp}
-            className="space-y-12"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold">{t('inquiry.form_name')}</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  className="w-full border-b border-black/20 py-4 focus:outline-none focus:border-black transition-colors bg-transparent"
-                  placeholder={t('inquiry.form_name_placeholder')}
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold">{t('inquiry.form_phone')}</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  required
-                  className="w-full border-b border-black/20 py-4 focus:outline-none focus:border-black transition-colors bg-transparent"
-                  placeholder={t('inquiry.form_phone_placeholder')}
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold">{t('inquiry.form_email')}</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="w-full border-b border-black/20 py-4 focus:outline-none focus:border-black transition-colors bg-transparent"
-                  placeholder={t('inquiry.form_email_placeholder')}
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-[10px] uppercase tracking-widest font-bold">{t('inquiry.form_service')}</label>
-              <div className="relative">
-                <select name="service_category" required className="w-full border-b border-black/20 py-4 focus:outline-none focus:border-black transition-colors bg-transparent appearance-none">
-                  <option value="debt">{t('inquiry.form_service_options.debt')}</option>
-                  <option value="background">{t('inquiry.form_service_options.background')}</option>
-                  <option value="school">{t('inquiry.form_service_options.school')}</option>
-                  <option value="evidence">{t('inquiry.form_service_options.evidence')}</option>
-                  <option value="corporate">{t('inquiry.form_service_options.corporate')}</option>
-                  <option value="detection">{t('inquiry.form_service_options.detection')}</option>
-                </select>
-                <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none opacity-40" size={16} />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-[10px] uppercase tracking-widest font-bold">{t('inquiry.form_overview')}</label>
-              <textarea
-                rows={4}
-                name="message"
-                required
-                className="w-full border-b border-black/20 py-4 focus:outline-none focus:border-black transition-colors bg-transparent resize-none"
-                placeholder={t('inquiry.form_overview_placeholder')}
-              />
-            </div>
-
-            <div className="pt-12">
-              <div className="flex items-start gap-4 mb-8 text-sm">
-                <input
-                  type="checkbox"
-                  id="privacy-consent"
-                  required
-                  className="mt-1 w-4 h-4 accent-black"
-                />
-                <label htmlFor="privacy-consent" className="font-light opacity-80 select-none cursor-pointer flex-1 flex flex-wrap items-center gap-2">
-                  {t('inquiry.privacy.agree')}
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsPrivacyModalOpen(true);
-                    }}
-                    className="font-medium underline hover:text-black/60 transition-colors inline-block"
-                  >
-                    {t('inquiry.privacy.view')}
-                  </button>
-                </label>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+            
+            {/* Left Column */}
+            <motion.div {...fadeInUp} className="w-full lg:w-1/2 flex flex-col justify-start pt-4">
+              {/* Titles */}
+              <div className="mb-8 text-left">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-[1.6] tracking-tight text-black break-keep">
+                  <span className="inline-block bg-blue-700 text-white px-2 sm:px-3 py-1 mb-2 sm:mb-3 font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl box-decoration-clone">혼자 고민하지 마세요.</span><br />
+                  <span className="text-black/70 font-medium">방문하시는 발걸음이 무겁지 않도록 세심하게 배려하겠습니다.</span>
+                </h2>
               </div>
 
-              <button
-                type="submit"
-                disabled={submitStatus === 'submitting'}
-                className={`w-full py-6 bg-black text-white rounded-full text-lg font-medium hover:scale-[1.02] transition-transform duration-500 ${submitStatus === 'submitting' ? 'opacity-50 pointer-events-none' : ''}`}
-              >
-                {submitStatus === 'submitting' ? '...' : t('inquiry.btn_submit')}
-              </button>
-              <p className="text-center mt-8 text-[10px] uppercase tracking-[0.2em] opacity-40">
-                {t('inquiry.footer_note')}
-              </p>
-
-              <div className="mt-16 text-center text-black/60 font-light space-y-2">
-                <h4 className="text-lg md:text-xl font-serif italic mb-4 font-bold text-black">{t('inquiry.company_info.name')}</h4>
-                <p className="text-xs md:text-sm">{t('inquiry.company_info.details1')}</p>
-                <p className="text-xs md:text-sm">{t('inquiry.company_info.details2')}</p>
-                <p className="text-[10px] md:text-xs mt-6 opacity-40 whitespace-pre-wrap">{t('inquiry.company_info.copyright')}</p>
+              <div className="mb-10 p-5 md:p-6 bg-white border border-black/5 rounded-2xl shadow-sm">
+                <p className="text-black/80 font-medium leading-relaxed break-keep whitespace-pre-wrap text-sm sm:text-base">
+                  정확한 상담과 원활한 안내를 위해 방문 전 미리 연락 부탁드립니다. 하단의 지도를 참고하여 방문해 주시면 친절히 안내해 드리겠습니다. (무료 주차 지원 가능)
+                </p>
               </div>
-            </div>
-          </motion.form>
+
+              {/* Map Image */}
+              <div className="w-full rounded-2xl overflow-hidden border border-black/10 shadow-lg mb-8 h-48 sm:h-64 md:h-[320px]">
+                <img src="/엠디탐정 지도.jpg" alt="오시는 길 지도" className="w-full h-full object-cover object-center" />
+              </div>
+
+              {/* Company Info */}
+              <div className="p-4 md:p-5 bg-white border border-black/5 rounded-2xl shadow-sm">
+                <h4 className="text-sm md:text-base font-bold text-black mb-1">{t('inquiry.company_info.name')}</h4>
+                <div className="w-full overflow-x-auto custom-scrollbar pb-1">
+                  <p className="text-[10px] sm:text-[11px] md:text-xs text-black/60 whitespace-nowrap tracking-tight">
+                    {t('inquiry.company_info.details2')}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Form */}
+            <motion.form
+              action="https://formspree.io/f/xnjgdyew"
+              method="POST"
+              onSubmit={handleFormSubmit}
+              {...fadeInUp}
+              className="w-full lg:w-1/2 bg-white rounded-[1.5rem] md:rounded-[2rem] p-5 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-black/5 space-y-6 md:space-y-8 h-fit"
+            >
+              <div className="space-y-4 md:space-y-6">
+                <div>
+                  <label className="block text-xs md:text-sm font-bold text-black/80 mb-1.5 md:mb-2">{t('inquiry.form_name')} <span className="text-red-500">*</span></label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="w-full px-3 py-2.5 md:px-4 md:py-3.5 text-sm md:text-base bg-[#f8f9fa] border-0 ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 rounded-lg md:rounded-xl transition-all outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs md:text-sm font-bold text-black/80 mb-1.5 md:mb-2">{t('inquiry.form_phone')} <span className="text-red-500">*</span></label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    className="w-full px-3 py-2.5 md:px-4 md:py-3.5 text-sm md:text-base bg-[#f8f9fa] border-0 ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 rounded-lg md:rounded-xl transition-all outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs md:text-sm font-bold text-black/80 mb-1.5 md:mb-2">{t('inquiry.form_service')} <span className="text-red-500">*</span></label>
+                  <div className="relative">
+                    <select name="service_category" required className="w-full px-3 py-2.5 md:px-4 md:py-3.5 text-sm md:text-base bg-[#f8f9fa] border-0 ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 rounded-lg md:rounded-xl transition-all outline-none appearance-none font-medium text-black/80">
+                      <option value="" disabled selected>(선택)</option>
+                      <option value="debt">{t('inquiry.form_service_options.debt')}</option>
+                      <option value="background">{t('inquiry.form_service_options.background')}</option>
+                      <option value="school">{t('inquiry.form_service_options.school')}</option>
+                      <option value="evidence">{t('inquiry.form_service_options.evidence')}</option>
+                      <option value="corporate">{t('inquiry.form_service_options.corporate')}</option>
+                      <option value="detection">{t('inquiry.form_service_options.detection')}</option>
+                    </select>
+                    <ChevronDown className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-40" size={16} />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-xs md:text-sm font-bold text-black/80 mb-1.5 md:mb-2">{t('inquiry.form_overview')}</label>
+                  <textarea
+                    rows={3}
+                    name="message"
+                    required
+                    className="w-full px-3 py-2.5 md:px-4 md:py-3.5 text-sm md:text-base bg-[#f8f9fa] border-0 ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-600 rounded-lg md:rounded-xl transition-all outline-none resize-none"
+                  />
+                </div>
+              </div>
+
+              <div className="pt-5 md:pt-6 border-t border-gray-100">
+                <label className="block text-xs md:text-sm font-bold text-black/80 mb-3 md:mb-4">개인정보 수집 및 이용 동의 <span className="text-red-500">*</span></label>
+                <div className="bg-[#f8f9fa] border border-gray-200 rounded-lg md:rounded-xl p-3 md:p-4 text-[10px] md:text-xs text-gray-500 h-20 md:h-28 overflow-y-auto mb-3 md:mb-4 custom-scrollbar whitespace-pre-wrap leading-relaxed">
+                  {t('inquiry.privacy.content')}
+                </div>
+                
+                <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-8">
+                  <input
+                    type="checkbox"
+                    id="privacy-consent"
+                    required
+                    className="w-4 h-4 text-blue-600 accent-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label htmlFor="privacy-consent" className="text-xs md:text-sm font-medium text-gray-700 cursor-pointer select-none">
+                    개인정보 수집 및 이용에 동의합니다.
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={submitStatus === 'submitting'}
+                  className={`w-full py-3 md:py-4 bg-blue-700 text-white rounded-lg md:rounded-xl text-base md:text-lg font-bold hover:bg-blue-800 transition-colors duration-300 shadow-md ${submitStatus === 'submitting' ? 'opacity-50 pointer-events-none' : ''}`}
+                >
+                  {submitStatus === 'submitting' ? '...' : '문의하기'}
+                </button>
+              </div>
+            </motion.form>
+
+          </div>
         </div>
       </section>
 
